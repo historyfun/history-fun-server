@@ -41,9 +41,9 @@ export class StudentPrintingDetailsService {
 
   async getUserDetails(id: string) {
     try {
-      const students = await this.studentPrintingDetailModel
-        .find({ _id: id }).exec();
-      return students.map((student) => ({
+      const student = await this.studentPrintingDetailModel
+        .findOne({ _id: id }).exec();
+      return {
         Id: student.id,
         StudentId: student.StudentId,
         StudentFirstName: student.StudentFirstName,
@@ -51,7 +51,7 @@ export class StudentPrintingDetailsService {
         PartOfSongToPrint: student.PartOfSongToPrint,
         DesignId: student.DesignId,
         ProductToPrintOn: student.ProductToPrintOn,
-      }));
+      }
     } catch (error) {
       throw new Error(`Error in GetUserDetails function: ${error.message}`);
     }
