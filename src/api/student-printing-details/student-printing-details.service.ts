@@ -26,13 +26,13 @@ export class StudentPrintingDetailsService {
     try {
       const students = await this.studentPrintingDetailModel.find().exec();
       return students.map((student) => ({
-        id: student.id,
-        studentId: student.StudentId,
-        studentFirstName: student.StudentFirstName,
-        studentLastName: student.StudentLastName,
-        partOfSongToPrint: student.PartOfSongToPrint,
-        designId: student.DesignId,
-        productToPrintOn: student.ProductToPrintOn,
+        Id: student.id,
+        StudentId: student.StudentId,
+        StudentFirstName: student.StudentFirstName,
+        StudentLastName: student.StudentLastName,
+        PartOfSongToPrint: student.PartOfSongToPrint,
+        DesignId: student.DesignId,
+        ProductToPrintOn: student.ProductToPrintOn,
       }));
     } catch (error) {
       throw new Error(`Error in GetUserDetails function: ${error.message}`);
@@ -44,13 +44,13 @@ export class StudentPrintingDetailsService {
       const students = await this.studentPrintingDetailModel
         .find({ id: id }).exec();
       return students.map((student) => ({
-        id: student.id,
-        studentId: student.StudentId,
-        studentFirstName: student.StudentFirstName,
-        studentLastName: student.StudentLastName,
-        partOfSongToPrint: student.PartOfSongToPrint,
-        designId: student.DesignId,
-        productToPrintOn: student.ProductToPrintOn,
+        Id: student.id,
+        StudentId: student.StudentId,
+        StudentFirstName: student.StudentFirstName,
+        StudentLastName: student.StudentLastName,
+        PartOfSongToPrint: student.PartOfSongToPrint,
+        DesignId: student.DesignId,
+        ProductToPrintOn: student.ProductToPrintOn,
       }));
     } catch (error) {
       throw new Error(`Error in GetUserDetails function: ${error.message}`);
