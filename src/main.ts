@@ -4,7 +4,8 @@ import * as cors from 'cors';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.use(cors({ origin: 'https://history-fun.vercel.app' }));
+  // app.use(cors({ origin: 'https://history-fun.vercel.app' }));
+  app.use(cors());
   // app.enableCors({
   //   origin: '*',
   //   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
