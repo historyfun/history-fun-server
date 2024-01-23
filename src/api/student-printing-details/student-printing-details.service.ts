@@ -42,7 +42,7 @@ export class StudentPrintingDetailsService {
   async getUserDetails(id: string) {
     try {
       const students = await this.studentPrintingDetailModel
-        .find({ id: id }).exec();
+        .find({ _id: id }).exec();
       return students.map((student) => ({
         Id: student.id,
         StudentId: student.StudentId,
